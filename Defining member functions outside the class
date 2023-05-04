@@ -1,0 +1,52 @@
+#include<iostream>
+using namespace std;
+
+class Array{    // Class that contains an Identifier Array.
+int num[5];     // Data members.
+public:         //Access Specifier
+void fill();     //Function to take input
+void display();  //Function to show inputted data
+int max();       //Function to configure maximum number.
+int min();       //Function to configure minimum number.
+};
+
+void Array::fill(){                     //Function defined outside the class.(:: is scope resolution).
+    cout<<"Enter 5 numbers to fill an array:";
+    for(int i=0;i<5;i++){
+        cin>>num[i];
+    }
+}
+
+void Array::display(){           
+    for(int i=0;i<5;i++){
+        cout<<num[i]<<endl;
+    }
+}
+
+int Array::max(){
+    int mx=num[0];
+    for(int i=1;i<5;i++){
+        if(mx<num[i]){
+           mx=num[i]; 
+        }
+        }
+    return mx;
+}
+
+int Array::min(){
+    int mi=num[0];
+    for(int i=0;i<5;i++){
+        if(mi>num[i]){
+           mi=num[i]; 
+        }
+    }
+    return mi;
+    }
+int main()
+{
+Array obj;             //Instance of the Class.
+obj.fill();            //dot is used to Access function.
+obj.display();
+cout<<"The Maximum number is : "<<obj.max()<<endl;
+cout<<"The Minimum number is : "<<obj.min()<<endl;
+}
