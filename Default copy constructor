@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+class book{
+private:
+int pg;
+float price;
+char title[50];
+public:
+void input(){
+cout<<"Enter Book title : ";
+cin.getline(title,50);
+cout<<"Enter Book pg : ";
+cin>>pg;
+cout<<"Enter book price : ";
+cin>>price;
+}
+void display(){
+cout<<"Book Title : "<<title<<endl;
+cout<<"Book pages : "<<pg<<endl;
+cout<<"Book Price : "<<price<<endl;
+}
+};
+int main()
+{
+book b1;
+cout<<"The detail of Book No 1"<<endl;
+b1.input();
+b1.display();
+book b2(b1);
+cout<<"The detail of Book No 2"<<endl;
+b2.display();
+book b3=b2;
+cout<<"The detail of Book No 3"<<endl;
+b3.display();
+}
