@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+class travel{
+    private:
+   int km,hr;
+   public:
+   travel(){
+   km=hr=0;
+   }
+   void get(){
+   cout<<"Enter kilometer traveled : ";
+   cin>>km;
+   cout<<"Enter hours traveled : ";
+   cin>>hr;
+   }
+   void show(){
+   cout<<"You traveled"<<km<<"Kilometer in"<<hr<<"Hours"<<endl;
+   }
+   travel add(travel p,travel q){
+   travel t;
+   t.km=q.km+p.km;
+   t.hr=q.hr+p.hr;
+   return t;
+   }
+};
+int main()
+{
+travel my ,your,a,r;
+my.get();
+my.show();
+your.get();
+your.show(); 
+r=a.add(my,your);
+cout<<"Total traveling is follows "<<endl;
+r.show();
+}
