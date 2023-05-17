@@ -1,0 +1,37 @@
+#include<iostream>
+using  namespace std;
+
+class A{
+    private:
+    int num1;
+    public:
+    A(){
+      cout<<"Enter your Favourite number : ";
+      cin>>num1; 
+    }
+    friend int max(A,B);
+};
+class B{
+private:
+int num2;
+public:
+B(){
+    cout<<"Enter your Favourite number : ";
+    cin>>num2;
+}
+friend int max(A ,B);
+};
+int max(A n1,B n2){
+    if(n1.num1>n2.num2){
+        cout<<"Number 1 is greter than Number 2"<<endl;
+    }
+    else{
+        cout<<"Number 2 is greater than Number 1"<<endl;
+    }
+}
+int main()
+{
+A obj1;
+B obj2;
+max(obj1,obj2);
+}
