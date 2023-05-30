@@ -1,3 +1,4 @@
+---------------------------------------------------------------1st program---------------------------------------------------------------------------------------------
 #include<iostream>
 using  namespace std;
 
@@ -34,4 +35,36 @@ int main()
 A obj1;
 B obj2;
 max(obj1,obj2);
+}
+--------------------------------------------------------------------------- 2nd program --------------------------------------------------------------------------------
+#include<iostream>
+using namespace std;
+class b;
+class a{
+  private:
+  int a1;
+  public:
+  a(){
+     a1=10;
+  }
+  friend show(a,b);
+};
+class b{
+  private: 
+  int b1;
+  public:
+  b(){
+     b1=20;
+  } 
+  friend show(a,b);
+};
+int show(a o1,b o2){
+  cout<<"The value stored in class a Object member is : "<<o1.a1<<endl;
+  cout<<"The value stored in class b Object member is : "<<o2.b1<<endl;
+  return(o1.a1+o2.b1);
+}
+int main(){
+  a obj1;
+  b obj2; 
+ cout<<show(obj1,obj2);
 }
