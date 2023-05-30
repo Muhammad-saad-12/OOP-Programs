@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+class a{
+  private:
+  int a1,b1;
+  public:
+  a(){
+     a1=10;
+     b1=30;
+  }
+  friend class b;
+};
+class b{
+  public:
+ void showA(a o1){
+  cout<<"The value of a :"<<o1.a1<<endl;
+ }
+ void showB(a o1){
+  cout<<"The value of a :"<<o1.b1<<endl;
+ }
+};
+int main(){
+  a obj1;
+  b obj2;
+ obj2.showA(obj1);
+ obj2.showB(obj1);
+ 
+}
