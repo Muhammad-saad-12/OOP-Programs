@@ -68,3 +68,51 @@ int main(){
   b obj2; 
  cout<<show(obj1,obj2);
 }
+---------------------------------------------------------------------------3rd-----------------------------------------------------------------------------------------------
+#include<iostream>
+using namespace std;
+  class DM;
+  class DB{
+  private:
+  int feet,inches;
+  public:
+  DB(){
+    cout<<"Enter the distance in feet : ";
+    cin>>feet;
+    cout<<"Enter the disatnce in inches: ";
+    cin>>inches;
+  }
+  void display(){
+    cout<<"Distance in DM:"<<feet<<"feet"<<inches<<"inches"<<endl;
+  }
+  friend void add(DM,DB);
+  };
+  class DM{
+    private:
+  int meters,centimeter;
+  public:
+  DM(){
+    cout<<"Enter the distance in meter : ";
+    cin>>meters;
+    cout<<"Enter the disatnce in centimeter: ";
+    cin>>centimeter;
+  }
+  void display(){
+    cout<<"Distance in DM:"<<meters<<"meter"<<centimeter<<"centimeter"<<endl;
+  }
+  friend void add(DM,DB);
+  };
+  void add(DM dm,DB db){
+  int total_meter,total_cen;
+  total_meter=dm.meters+(db.feet*0.3048);
+  total_cen=dm.centimeter+(db.inches*2.54);
+  int extrameter=total_cen/100;
+  total_meter+=extrameter;
+  total_cen=total_cen%100;
+  cout<<"The sum of the distances"<<total_meter<<"Total meter and"<< total_cen<<"centimeter"<<endl;
+  }
+int main(){
+DM obj1;
+DB obj2;
+add(obj1,obj2);
+}
