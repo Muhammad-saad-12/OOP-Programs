@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+class parent{
+protected:
+int n;
+public:
+parent(){
+    n=0;
+}
+parent(int p){
+    n=p;
+}
+void show(){
+    cout<<" N : "<<n<<endl;
+}
+};
+class child: public parent{
+private:
+char ch;
+public:
+child() : parent(){
+ch='x';
+}
+child(char c,int m):parent(m){
+ch=c;
+}
+void display(){
+    cout<<"CH : "<<ch<<endl;
+}
+};
+int main(){
+child obj1,obj2('@',100);
+cout<<"Object 1 as follows : "<<endl;
+obj1.show();
+obj1.display();
+cout<<"Object 2 as follows : "<<endl;
+obj2.show();
+obj2.display();
+}
